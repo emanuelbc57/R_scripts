@@ -1,7 +1,8 @@
 # R_scripts
 **(Portuguese Below)**
 
-(English)
+**(English)**
+
 This repository aims to collect my R functions for matrix operations not covered in matrixcalc and pracma packages.
 Till now, here are the functionalities of my scrips
 
