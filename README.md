@@ -1,5 +1,5 @@
 # R_scripts
-(Portuguese Below)
+**(Portuguese Below)**
 
 (English)
 This repository aims to collect my R functions for matrix operations not covered in matrixcalc and pracma packages.
@@ -10,7 +10,7 @@ Till now, here are the functionalities of my scrips
 To use the function, you can download the file and use the command ```source('path/file_name.R')``` in your code
 
 
-(Portuguese / Português)
+**(Portuguese / Português)**
 
 Este repósitório the a função de armazenar minhas funções no R para operações com matrizes não disponíveis nos pacotes matrixcalc e pracma.
 Até o momento, aqui estão as funcionalidades dos scripts:
