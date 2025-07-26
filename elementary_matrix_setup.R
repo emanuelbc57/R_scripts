@@ -1,3 +1,22 @@
+null_matrix <- function(dim = 1){
+    dim <- as.integer(dim)
+    return(rep(0, dim) %*% t(rep(0, dim)))
+}
+
+ones_matrix <- function(dim = 1){
+    dim <- as.integer(dim)
+    return(rep(1, dim) %*% t(rep(1, dim)))
+}
+
+id_matrix <- function(dim = 1){
+    dim <- as.integer(dim)
+    mat <- null_matrix(dim)
+    for (i in (1:dim)){
+        mat[i, i] = 1
+    }
+    return(mat)
+}
+
 elementary_matrix <- function(o_type = 'i', dim = 1, coord = 1, value = 1) {
   #' o_type - recieves the kind of elementary matrix to be created (p, e, r) or i for Identity matrix - default value.
   #' dim - recieves the dimension of the matrix to be created (natural numbers)
@@ -9,15 +28,13 @@ elementary_matrix <- function(o_type = 'i', dim = 1, coord = 1, value = 1) {
   #'
   #' in case of invalid input, the function will throw either an error or an Id matrix
   
-  dim <- as.numeric(dim)
+  dim <- as.integer(dim)
   coord <- as.array(coord)
   value <- as.numeric(value)
-  mat <- rep(0, dim) %*% t(rep(0, dim)) # creats null matrix
-  for (number in seq(1:dim)){ # changes the null matrix into a I matrix
-    mat[number, number] = 1
-  }
-  
-  if (o_type == 'p') {
+  mat <- id_matrix(dim)
+    
+  if (o_type == 'i') {
+  } else if (o_type == 'p') {
     mat[coord[1], coord[2]] <- value
   } else if (o_type == 'e') {
     cola_tmp <- mat[,coord[2]]
@@ -25,8 +42,7 @@ elementary_matrix <- function(o_type = 'i', dim = 1, coord = 1, value = 1) {
     mat[,coord[1]] <- cola_tmp
     mat[,coord[2]] <- colb_tmp
   } else if (o_type == 'r') {
-    mat[coord[1],] <- mat[coord[1],]*value
-  } else if (o_type == 'i') {return(mat)}
+    mat[coord[1],] <- mat[coord[1],]*value} 
   
   return(mat)
 }
