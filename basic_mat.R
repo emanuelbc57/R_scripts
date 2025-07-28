@@ -1,4 +1,4 @@
-null_matrix <- function(dim = c(5,3)) {
+null_matrix <- function(dim = 1) {
     dim <- as.array(dim)
     if (length(dim) == 2) {
         mat <- rep(0, dim[1]) %*% t(rep(0, dim[2]))
